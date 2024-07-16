@@ -1,0 +1,18 @@
+<launch>
+
+    <!-- hunter_se 관련 실행  -->
+    <node pkg="hunter_bringup" type="setup_can2usb.bash" name="hunter_bringup" output="screen"/> 
+    <include file="$(find hunter_bringup)/launch/hunter_robot_base.launch" />
+
+    <!-- nova_2 관련 실행 -->
+    <include file="$(find dobot_bringup)/launch/bringup.launch" />
+    <include file="$(find dobot_moveit)/launch/moveit.launch" />
+    
+    <!-- depth_camera & objection detection  관련 실행 -->
+    <include file="$(find orbbec_camera)/launch/astra_adv.launch" />
+    <node pkg="object_detection" type="depth_find.py" name="depth_example" output="screen"/>
+    <node pkg="object_detection" type="tf_pointcloud.py" name="tf_pointcloud" output="screen"/>
+	
+</launch>
+
+

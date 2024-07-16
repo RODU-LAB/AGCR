@@ -1,0 +1,10 @@
+<launch>
+    
+    <!-- depth_camera & objection detection  관련 실행 -->
+    <include file="$(find orbbec_camera)/launch/astra_adv.launch" />
+    <node pkg="object_detection" type="depth_find.py" name="depth_example" output="screen"/>
+    <node pkg="object_detection" type="tf_pointcloud.py" name="tf_pointcloud" output="screen"/>
+	
+</launch>
+
+

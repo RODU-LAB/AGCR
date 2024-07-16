@@ -1,0 +1,7 @@
+<launch>
+    <!-- gripper 관련 실행 -->
+    <node pkg="agcr" type="gripper.py" name="gripper_example" output="screen"/>
+
+</launch>
+
+

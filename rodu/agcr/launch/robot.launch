@@ -1,0 +1,11 @@
+<launch>
+
+    <!-- nova_2 관련 실행 -->
+    <include file="$(find dobot_bringup)/launch/bringup.launch" />
+    <include file="$(find dobot_moveit)/launch/moveit.launch" />
+    <node
+    
+    
+</launch>
+
+
